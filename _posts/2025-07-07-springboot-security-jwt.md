@@ -79,4 +79,16 @@ public class AuthController {
     }
 }
 ```
+---
+
+## 🧾 Kết luận
+
+Trên đây là cách triển khai xác thực người dùng với Spring Security và JWT trong một ứng dụng Spring Boot. Giải pháp này giúp bảo vệ REST API hiệu quả và dễ mở rộng.
+
+Trong các bài viết tiếp theo, mình sẽ chia sẻ:
+- Cách tích hợp JWT với cơ sở dữ liệu thực tế
+- Cách sử dụng refresh token
+- Phân quyền truy cập theo vai trò (ROLE)
+
+Cảm ơn bạn đã đọc đến đây! Nếu thấy hữu ích, đừng ngại chia sẻ hoặc góp ý bên dưới. Chúc bạn thành công! 🙌
 
