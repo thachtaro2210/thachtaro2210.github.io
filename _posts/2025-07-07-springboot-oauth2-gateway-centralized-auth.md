@@ -18,10 +18,12 @@ In this post, we’ll build an **OAuth2-based centralized authentication system*
 
 ## 🧭 System Architecture Overview
 
+```text
 [Client] --> [Spring Cloud Gateway] --> [Service A]
                            |                   |
                            v                   v
                  [Authorization Server] <--- [UserDB]
+```
 ---
 
 ## 🧱 1. Spring Cloud Gateway as Resource Server
