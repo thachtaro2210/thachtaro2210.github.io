@@ -36,9 +36,11 @@ public class SecurityConfig {
 }
 ```
 🛠️ JWT Utility
-
+```java
+@Component
 public class JwtUtil {
     private final String SECRET = "secret_key";
+
     public String generateToken(String username) {
         return Jwts.builder()
             .setSubject(username)
@@ -47,27 +49,34 @@ public class JwtUtil {
             .signWith(SignatureAlgorithm.HS256, SECRET)
             .compact();
     }
+
     public String extractUsername(String token) {
-        return Jwts.parser().setSigningKey(SECRET)
-            .parseClaimsJws(token).getBody().getSubject();
+        return Jwts.parser()
+            .setSigningKey(SECRET)
+            .parseClaimsJws(token)
+            .getBody()
+            .getSubject();
     }
 }
-
+```
 ✅ Đăng nhập
-
+```java
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+
     @Autowired
     private JwtUtil jwtUtil;
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         // Xác thực user (ví dụ hardcoded)
-        if(request.getUsername().equals("admin") && request.getPassword().equals("123456")) {
+        if ("admin".equals(request.getUsername()) && "123456".equals(request.getPassword())) {
             String token = jwtUtil.generateToken(request.getUsername());
             return ResponseEntity.ok(new JwtResponse(token));
         }
         return ResponseEntity.status(401).body("Unauthorized");
     }
 }
+```
 
