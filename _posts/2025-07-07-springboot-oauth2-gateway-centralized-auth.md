@@ -50,7 +50,7 @@ Protects all routes except login
 
 Validates JWT for incoming requests
 
-🔑 2. Authorization Server (Keycloak Example)
+## 🔑 2. Authorization Server (Keycloak Example)
 Use Keycloak or Spring Authorization Server.
 
 Create in Keycloak:
@@ -79,7 +79,7 @@ spring:
           keycloak:
             issuer-uri: http://localhost:8080/realms/myrealm
 ```
-🚪 3. Securing Microservices with JWT
+## 🚪 3. Securing Microservices with JWT
 ```java
 @Configuration
 @EnableWebSecurity
@@ -97,7 +97,7 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
     }
 }
 ```
-📦 4. Role-based Access Control (RBAC)
+## 📦 4. Role-based Access Control (RBAC)
 ```java
 @GetMapping("/admin")
 @PreAuthorize("hasAuthority('ROLE_ADMIN')")
@@ -130,7 +130,7 @@ spring:
                 redis-rate-limiter.replenishRate: 10
                 redis-rate-limiter.burstCapacity: 20
 ```
-✅ Summary
+## ✅ Summary
 You've now built a scalable, secure, and centralized authentication system using:
 
 Spring Gateway as API entry point
