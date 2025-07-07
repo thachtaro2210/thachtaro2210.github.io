@@ -32,7 +32,7 @@ implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
 runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
 runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 ```
-🔐 2. JWT Utility
+## 🔐 2. JWT Utility
 ```java
 @Component
 public class JwtUtils {
@@ -54,7 +54,7 @@ public class JwtUtils {
     }
 }
 ```
-🔁 3. Refresh Token Rotation
+## 🔁 3. Refresh Token Rotation
 ```java
 @Entity
 public class RefreshToken {
@@ -80,7 +80,7 @@ Save the new refresh token
 
 This ensures old refresh tokens are invalid after a single use.
 
-🔄 4. Refresh Endpoint Example
+## 🔄 4. Refresh Endpoint Example
 ```java
 @PostMapping("/refresh")
 public ResponseEntity<?> refreshToken(@RequestBody String oldToken) {
@@ -101,7 +101,7 @@ public ResponseEntity<?> refreshToken(@RequestBody String oldToken) {
     return ResponseEntity.ok(Map.of("accessToken", newAccessToken, "refreshToken", newRefreshToken));
 }
 ```
-🧷 5. Security Config
+## 🧷 5. Security Config
 ```java
 @Override
 protected void configure(HttpSecurity http) throws Exception {
@@ -113,7 +113,7 @@ protected void configure(HttpSecurity http) throws Exception {
             .anyRequest().authenticated();
 }
 ```
-🔚 Conclusion
+## 🔚 Conclusion
 JWT alone is not enough for a secure auth system. Refresh token rotation ensures your tokens are safe, even in case of interception. You now have a battle-tested authentication system.
 
-✅ Next step: Add IP/device tracking and logout support by invalidating refresh tokens manually!
+
