@@ -11,7 +11,7 @@ Trong bài viết này, chúng ta sẽ xây dựng một hệ thống xác thự
 
 ## 💡 Ý tưởng
 
-1. Người dùng đăng nhập bằng email/password → nhận JWT token.
+1. Người dùng đăng nhập bằng email/password → nhận JWT token.  
 2. Gửi JWT ở mỗi request → xác thực & cho phép truy cập tài nguyên bảo vệ.
 
 ---
@@ -36,6 +36,7 @@ public class SecurityConfig {
 }
 ```
 🛠️ JWT Utility
+```
 public class JwtUtil {
     private final String SECRET = "secret_key";
 
@@ -53,10 +54,16 @@ public class JwtUtil {
             .parseClaimsJws(token).getBody().getSubject();
     }
 }
+```
 ✅ Đăng nhập
+```
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+
+    @Autowired
+    private JwtUtil jwtUtil;
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         // Xác thực user (ví dụ hardcoded)
@@ -67,61 +74,4 @@ public class AuthController {
         return ResponseEntity.status(401).body("Unauthorized");
     }
 }
-
----
-
-## 📄 `2025-07-07-springboot-microservices-communication.md`
-**Chủ đề:** Giao tiếp giữa các microservice bằng RestTemplate và OpenFeign
-
-```markdown
----
-title: Giao tiếp giữa các Microservice trong Spring Boot
-date: 2025-07-07
-categories: [Spring Boot, Microservices]
-tags: [springboot, microservices, resttemplate, feign]
----
-
-Khi xây dựng hệ thống microservices, việc **giao tiếp giữa các service** là bắt buộc. Trong bài này, chúng ta sẽ thực hiện bằng cả `RestTemplate` và `OpenFeign`.
-
----
-
-## 🧩 Kiến trúc
-
-- `UserService`: Quản lý người dùng
-- `OrderService`: Gọi sang `UserService` để lấy thông tin người dùng
-
----
-
-## 🔁 RestTemplate
-
-```java
-@Service
-public class UserClient {
-    private final RestTemplate restTemplate = new RestTemplate();
-
-    public UserDTO getUserById(Long id) {
-        return restTemplate.getForObject("http://localhost:8081/users/" + id, UserDTO.class);
-    }
-}
 ```
-⚡ OpenFeign
-@FeignClient(name = "user-service", url = "http://localhost:8081")
-public interface UserClient {
-    @GetMapping("/users/{id}")
-    UserDTO getUserById(@PathVariable Long id);
-}
-Kích hoạt Feign:
-@SpringBootApplication
-@EnableFeignClients
-public class OrderServiceApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(OrderServiceApplication.class, args);
-    }
-}
-
-💬 Khi nào dùng gì?
-
-Công cụ	          Ưu điểm	                Nhược điểm
-RestTemplate	  Chủ động, dễ hiểu	    Phải viết tay nhiều
-OpenFeign	Gọn,    dễ mở rộng	          Cần thêm config khi scale lên
-
