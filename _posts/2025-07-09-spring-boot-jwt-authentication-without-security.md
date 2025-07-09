@@ -46,7 +46,7 @@ What if you want to **learn the internals**? In this post, we’ll build a **JWT
     <scope>runtime</scope>
 </dependency>
 ```
-##🧠 2. JWT Utility Class
+## 🧠 2. JWT Utility Class
 ```java
 public class JwtUtil {
     private static final String SECRET_KEY = "my-very-secure-secret-key";
@@ -70,7 +70,7 @@ public class JwtUtil {
     }
 }
 ```
-##🧪 3. AuthController: Login to get token
+## 🧪 3. AuthController: Login to get token
 ```java
 @RestController
 @RequestMapping("/auth")
@@ -89,7 +89,7 @@ public class AuthController {
     record AuthRequest(String username, String password) {}
 }
 ```
-##🛡️ 4. JWT Filter: Intercept & validate
+## 🛡️ 4. JWT Filter: Intercept & validate
 ```java
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
@@ -121,7 +121,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 }
 ```
 
-##🧷 5. Filter Configuration
+## 🧷 5. Filter Configuration
 ```java
 @Configuration
 public class FilterConfig {
@@ -135,7 +135,7 @@ public class FilterConfig {
     }
 }
 ```
-##🔐 6. Secured Controller with Role Check
+## 🔐 6. Secured Controller with Role Check
 ```java
 @RestController
 @RequestMapping("/api")
@@ -158,20 +158,20 @@ public class SecureController {
     }
 }
 ```
-##🧪 7. Test with Postman or Curl
+## 🧪 7. Test with Postman or Curl
 
-#🔑 Step 1: Login to get token
+# 🔑 Step 1: Login to get token
 ```
 curl -X POST http://localhost:8080/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username":"user","password":"pass"}'
 ```
-#🔐 Step 2: Call secure endpoint
+# 🔐 Step 2: Call secure endpoint
 ```
 curl http://localhost:8080/api/hello \
   -H "Authorization: Bearer <your_token_here>"
 ```
-##📌 Summary
+## 📌 Summary
 Built full JWT auth flow without Spring Security
 
 Learned about filters, JWT structure, and role checking
