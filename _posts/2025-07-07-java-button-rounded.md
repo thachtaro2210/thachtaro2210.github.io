@@ -42,6 +42,9 @@ public class RoundedButton extends JButton {
 🎨 Cách sử dụng:
 ```java
 RoundedButton btn = new RoundedButton("Click Me");
+btn.setBackground(new Color(66, 135, 245));
+btn.setForeground(Color.WHITE);
+
 ```
 
 {% raw %}
@@ -52,7 +55,5 @@ RoundedButton btn = new RoundedButton("Click Me");
 {% endraw %}
 
 
-btn.setBackground(new Color(66, 135, 245));
-btn.setForeground(Color.WHITE);
 
 
