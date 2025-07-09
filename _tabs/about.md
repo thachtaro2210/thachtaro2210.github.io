@@ -36,4 +36,3 @@ I aim to update this blog **weekly on Mondays** with new content related to what
 
 Thanks for spending your time here. I’d love to hear your thoughts and suggestions!
 
-<iframe src="https://forms.gle/DdmAidKFda4MUDfP6" width="640" height="686" frameborder="0" marginheight="0" marginwidth="0">🔃Loading form…</iframe>
