@@ -1,7 +1,7 @@
 ---
 title: "Tạo nút bo góc trong Java Swing đơn giản"
 date: 2025-07-07
-slug: java-swing
+
 categories: [Java, UI]
 tags: [java swing, ui, button, custom component]
 
