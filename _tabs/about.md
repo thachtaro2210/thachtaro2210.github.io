@@ -6,7 +6,7 @@ order: 3
 
 Welcome to my blog! 😁
 
-I’m **Tong Phan Kim Thach**, an aspiring **Software Engineer** with a strong focus on **Java Backend Development**. I'm currently studying **Data Science** at the **University of Industry, Ho Chi Minh City**, but my passion lies in building scalable and maintainable backend systems.
+I’m **Tong Phan Kim Thach**, an aspiring **Software Engineer** with a strong focus on **Java Backend Development**. I'm currently studying **Software Engineer** at the **University of Industry, Ho Chi Minh City**, but my passion lies in building scalable and maintainable backend systems.
 
 This blog is where I share what I’ve learned — from Java core concepts, RESTful API development, database integration, to backend architecture patterns and real-world debugging experiences. I believe writing is a powerful tool for reflection and growth, and I hope these posts will be helpful for others on the same journey.
 
