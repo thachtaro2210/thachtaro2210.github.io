@@ -1,0 +1,15 @@
+- title: About
+  icon: fas fa-user
+  url: /about/
+
+- title: Categories
+  icon: fas fa-stream
+  url: /categories/
+
+- title: Tags
+  icon: fas fa-tags
+  url: /tags/
+
+- title: Archives
+  icon: fas fa-archive
+  url: /archives/
