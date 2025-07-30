@@ -1,8 +1,8 @@
 ---
 title: My Project
-icon: fas fa-code
+icon: fas fa-tags
 order: 5
 ---
 
-Here are some of my featured backend projects using Java and Spring Boot...
+
 
