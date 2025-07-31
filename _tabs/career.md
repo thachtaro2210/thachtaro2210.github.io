@@ -1,6 +1,6 @@
 ---
-title: 💼 Experience & Education
-
+title: Experience & Education
+icon : fas fa-briefcase
 order: 5
 ---
 
