@@ -1,5 +1,5 @@
 ---
-title: Experience & Education
+title: 💼 Experience & Education
 
 order: 5
 ---
