@@ -1,5 +1,5 @@
 ---
-title: Career
+title: Experience & Education
 
 order: 5
 ---
