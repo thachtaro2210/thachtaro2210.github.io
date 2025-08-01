@@ -1,6 +1,6 @@
 ---
 title: My Project
-icon: fas fa-archive
+icon: fas fa-lightbulb
 order: 4
 ---
 
